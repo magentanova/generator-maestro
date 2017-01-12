@@ -30,6 +30,8 @@ module.exports = generators.Base.extend({
 	},
 
 	writing: function() {
+
+		this.frameworkName 
 		mkdirp(this.appRoot, function(err,stuff) {
 			if (err) console.log(err)
 		})
