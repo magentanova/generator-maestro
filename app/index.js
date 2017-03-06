@@ -36,7 +36,7 @@ module.exports = generators.Base.extend({
 			if (err) console.log(err)
 		})
 		this.directory(`${this.sourceRoot()}`,this.appRoot)
-
+		this.fs.write(`${this.appRoot}/.gitignore`, 'node_modules')
 		var paths = ['package.json','server.js','README.md','src/scripts/app.js']
 		paths.forEach(
 			(filepath)=>{
