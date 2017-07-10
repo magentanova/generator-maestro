@@ -2,7 +2,7 @@
   "name": "<%= appName %>",
   "version": "0.0.0",
   "scripts": {
-    "build": "npm run build-js && npm run build-css && echo '\n\n===== building js and scss files for production =====\n\n'",
+    "build": "echo '\n\n===== building js and scss files for production =====\n\n' && npm run build-js && npm run build-css",
     "build-css": "node-sass --output-style compressed src/styles/style.scss dist/assets/css/style.css",
     "build-js": "NODE_ENV=production browserify src/scripts/app.js --transform babelify | uglifyjs > dist/assets/js/app.js",
     "deploy": "git push origin master && npm run build && git push heroku master",
